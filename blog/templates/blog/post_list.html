@@ -6,11 +6,12 @@
         <div>
             <h1><a href="/">Family Ky Blog</a></h1>
         </div>
-
+    {% for post in posts %}
         <div>
-            <p>published: 01.10.2019, 12:14</p>
-            <h2><a href="">Family meal at Ivry</a></h2>
-            <p>We have this Sunday a family meal at Ivry. It was a great time. We have eaten Pho and Qai Guay!</p>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
+    {% endfor %}
     </body>
 </html>
